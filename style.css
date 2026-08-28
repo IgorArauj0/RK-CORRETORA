@@ -288,8 +288,8 @@ h2 {
 }
 
 .logo-mark {
-  width: 46px;
-  height: 36px;
+  width: 80px;
+  height: 58px;
 }
 
 .logo-rk {
@@ -1018,7 +1018,9 @@ h2 {
   }
 
   .logo-mark {
-    width: 40px;
+    width: 80px;
+    height: 58px;
+    
   }
 
   .logo-word {
@@ -1067,5 +1069,11 @@ h2 {
 
   .header-cta .btn-ghost {
     display: none;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
