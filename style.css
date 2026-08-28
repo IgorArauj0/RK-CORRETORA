@@ -320,7 +320,7 @@ h2 {
 
 .main-nav a {
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.72rem;
   color: var(--navy);
   position: relative;
 }
@@ -442,6 +442,16 @@ h2 {
   gap: 14px;
   margin-top: 34px;
   flex-wrap: wrap;
+}
+
+.hero-actions .btn-lg {
+  border: none;
+}
+
+
+
+.fa-arrow-right {
+  margin: 0.5rem;
 }
 
 .hero .btn-outline {
@@ -572,7 +582,7 @@ h2 {
 /* ------------------------------ Diferenciais -------------------------------- */
 .diff-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -899,6 +909,19 @@ h2 {
     padding: 10px 16px;
     font-size: 0.85rem;
   }
+
+  .btn-primary {
+    display: none;
+  }
+
+  .btn-lg {
+    display: flex;
+  }
+
+  .hero-actions .btn-outline {
+    margin-left: -1.4rem;
+  }
+
 
   .main-nav {
     display: none;
