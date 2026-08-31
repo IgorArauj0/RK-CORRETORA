@@ -381,6 +381,94 @@ h2 {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+
+/* Item que contém o dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+/* Link principal */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+/* Pequena seta */
+.dropdown-toggle::after {
+  content: "⌄";
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* Menu inicialmente escondido */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+
+  min-width: 190px;
+
+  background: #ffffff;
+  border-radius: 8px;
+
+  padding: 8px 0;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 1000;
+}
+
+/* Links do dropdown */
+.dropdown-menu a {
+  display: block;
+
+  padding: 11px 18px;
+
+  color: #0b1d3a;
+  text-decoration: none;
+
+  font-size: 14px;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Hover nos itens */
+.dropdown-menu a:hover {
+  background: #f2f5fa;
+  color: #2459a6;
+}
+
+/* ABRIR DROPDOWN AO PASSAR O MOUSE */
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Girar a seta */
+.nav-dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
 /* ---------------------------------- Hero ---------------------------------- */
 .hero {
   /* background: radial-gradient(ellipse at 80% -10%, #16305c 0%, var(--navy) 55%); */
