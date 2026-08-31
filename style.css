@@ -365,6 +365,7 @@ h2 {
   height: 2px;
   background: var(--navy);
   border-radius: 2px;
+
   transition: transform .25s var(--ease), opacity .25s var(--ease);
 }
 
@@ -382,9 +383,14 @@ h2 {
 
 /* ---------------------------------- Hero ---------------------------------- */
 .hero {
-  background: radial-gradient(ellipse at 80% -10%, #16305c 0%, var(--navy) 55%);
+  /* background: radial-gradient(ellipse at 80% -10%, #16305c 0%, var(--navy) 55%); */
+  background: linear-gradient(180deg, #0c16a364 8.33%, rgba(5, 39, 101, 0.745) 100%), url(src/RKK.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
   color: var(--white);
-  padding: 90px 0 110px;
+  padding: 50px 0 110px;
   overflow: hidden;
 }
 
@@ -924,6 +930,11 @@ h2 {
     margin-left: -1.4rem;
   }
 
+  .hero{
+    background: linear-gradient(180deg, #0c16a364 8.33%, rgba(5, 39, 101, 0.745) 100%), url(src/tablet..jpg);
+    background-position: center right;
+    background-size: cover;
+  }
 
   .main-nav {
     display: none;
@@ -1033,6 +1044,12 @@ h2 {
   .header-cta .btn-primary {
     padding: 9px 12px;
     font-size: 0.72rem;
+  }
+
+.hero{
+     background: linear-gradient(180deg, #0c16a364 8.33%, rgba(5, 39, 101, 0.745) 100%), url(src/mobile.jpg);
+     background-position: right center;
+     background-size: cover;
   }
 
   .nav-toggle {
