@@ -81,3 +81,117 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+
+
+// ======================= CARROSSEL ======================= 
+
+class Carousel {
+  constructor() {
+    this.track = document.querySelector('.carousel-track');
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.dots = document.querySelectorAll('.carousel-dot');
+    this.prevBtn = document.querySelector('.carousel-btn-prev');
+    this.nextBtn = document.querySelector('.carousel-btn-next');
+    
+    this.currentIndex = 0;
+    this.slideCount = this.slides.length;
+    this.autoPlayInterval = null;
+    
+    this.init();
+  }
+
+  init() {
+    if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+    
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => this.goTo(index));
+    });
+
+    // Auto-play (opcional)
+    this.startAutoPlay();
+    
+    // Pausa ao hover
+    this.track?.parentElement?.addEventListener('mouseenter', () => this.stopAutoPlay());
+    this.track?.parentElement?.addEventListener('mouseleave', () => this.startAutoPlay());
+  }
+
+  updateCarousel() {
+    const offset = -this.currentIndex * 100;
+    this.track.style.transform = `translateX(${offset}%)`;
+    
+    this.dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.currentIndex);
+      dot.setAttribute('aria-selected', index === this.currentIndex);
+    });
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.slideCount;
+    this.updateCarousel();
+    this.resetAutoPlay();
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.slideCount) % this.slideCount;
+    this.updateCarousel();
+    this.resetAutoPlay();
+  }
+
+  goTo(index) {
+    this.currentIndex = index;
+    this.updateCarousel();
+    this.resetAutoPlay();
+  }
+
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => this.next(), 6000);
+  }
+
+  stopAutoPlay() {
+    clearInterval(this.autoPlayInterval);
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+// Inicializa o carrossel quando o DOM está pronto
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.carousel-track')) {
+    new Carousel();
+  }
+});
+
+
+
+
+
+// ======================= CARROSSEL LOOP SEGURADORAS ======================= 
+
+// Otimização: Pausa animação ao sair da viewport
+const observerOptions = {
+  threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const track = entry.target.querySelector('.insurers-carousel-track');
+    if (entry.isIntersecting) {
+      track.style.animationPlayState = 'running';
+    } else {
+      track.style.animationPlayState = 'paused';
+    }
+  });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselWrapper = document.querySelector('.insurers-carousel-wrapper');
+  if (carouselWrapper) {
+    observer.observe(carouselWrapper);
+  }
+});
