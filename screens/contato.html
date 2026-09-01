@@ -84,53 +84,68 @@
 
     <main>
 
-         <!-- ======================= DIFERENCIAIS ======================= -->
-  <section class="section section-dark" id="diferenciais">
-    <div class="wrap">
-      <div class="section-head section-head-light">
-        <p class="eyebrow eyebrow-light"><span class="eyebrow-wave" aria-hidden="true"></span>Por que a RK</p>
-        <h2>Seguro não é tudo igual.</h2>
-      </div>
+        <!-- ======================= CONTATO ======================= -->
+        <section class="section section-alt" id="contato">
+            <div class="wrap contato-grid">
+                <div class="contato-info reveal">
+                    <p class="eyebrow"><span class="eyebrow-wave" aria-hidden="true"></span>Vamos conversar</p>
+                    <h2>Sua tranquilidade é o nosso compromisso.</h2>
+                    <p class="hero-lead" style="margin-bottom:2rem;">
+                        Conte o que você precisa proteger e retornamos com as melhores opções — sem enrolação.
+                    </p>
 
-      <div class="diff-grid">
-        <div class="diff-item reveal">
-          <svg class="icon icon-light" viewBox="0 0 48 48" aria-hidden="true">
-            <circle cx="24" cy="14" r="8" />
-            <path d="M8 42 C8 30 15 25 24 25 C33 25 40 30 40 42" fill="none" />
-          </svg>
-          <h3>Acompanhamento de verdade</h3>
-          <p>A RK continua ao seu lado após a contratação, nas renovações, alterações, dúvidas ou imprevistos.</p>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="icon icon-light" viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M24 4 L44 12 V22 C44 33 36 41 24 44 C12 41 4 33 4 22 V12 Z" fill="none" />
-            <path d="M16 24 L21 29 L32 18" fill="none" />
-          </svg>
-          <h3>Mais possibilidades</h3>
-          <p>Acesso a diferentes seguradoras e soluções para encontrar a alternativa mais adequada a cada necessidade.
-          </p>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="icon icon-light" viewBox="0 0 48 48" aria-hidden="true">
-            <circle cx="24" cy="24" r="18" fill="none" />
-            <circle cx="24" cy="24" r="10" fill="none" />
-            <circle cx="24" cy="24" r="2" />
-          </svg>
-          <h3>Experiência que orienta</h3>
-          <p>Conhecimento técnico para analisar coberturas, condições e diferenças que vão além do preço.</p>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="icon icon-light" viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M6 38 L18 22 L26 28 L42 8" fill="none" />
-            <path d="M42 8 H30 M42 8 V20" fill="none" />
-          </svg>
-          <h3>Proteção completa</h3>
-          <p>Saúde, patrimônio, vida, previdência, automóvel, viagem e outras soluções para pessoas e empresas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-label">Telefones</span>
+                            <a href="tel:+5561992729270">(61) 99272-9270</a>
+                            <a href="tel:+5521995073436">(21) 99507-3436</a>
+                        </li>
+                        <li>
+                            <span class="contact-label">E-mail</span>
+                            <a href="mailto:contato@rkcorretora.com.br">contato@rkcorretora.com.br</a>
+                        </li>
+                        <li>
+                            <span class="contact-label">Endereço</span>
+                            <span>SCLSW 101, Bloco C, sala 138 — Setor Sudoeste, Brasília/DF</span>
+                        </li>
+                    </ul>
 
+                    <a class="btn btn-primary" href="https://wa.me/5561992729270" target="_blank" rel="noopener">Chamar
+                        agora no
+                        WhatsApp</a>
+                </div>
+
+                <form class="contato-form reveal" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required autocomplete="name">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="form-row">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+                    </div>
+                    <div class="form-row">
+                        <label for="interesse">Tenho interesse em</label>
+                        <select id="interesse" name="interesse">
+                            <option value="Saúde">Saúde</option>
+                            <option value="Auto">Auto</option>
+                            <option value="Viagem">Viagem</option>
+                            <option value="Outro">Outro ramo de seguro</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Enviar mensagem</button>
+                    <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
