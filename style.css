@@ -410,10 +410,10 @@ h2 {
 
   min-width: 190px;
 
-  background: #ffffff;
+  background: var(--navy);
   border-radius: 8px;
 
-  padding: 8px 0;
+  padding: 8px 3px;
 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 
@@ -435,7 +435,7 @@ h2 {
 
   padding: 11px 18px;
 
-  color: #0b1d3a;
+  color: white;
   text-decoration: none;
 
   font-size: 14px;
@@ -448,8 +448,8 @@ h2 {
 
 /* Hover nos itens */
 .dropdown-menu a:hover {
-  background: #f2f5fa;
-  color: #2459a6;
+  background: var(--navy);
+  color: white;
 }
 
 /* ABRIR DROPDOWN AO PASSAR O MOUSE */
