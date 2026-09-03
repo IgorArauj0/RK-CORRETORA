@@ -896,7 +896,7 @@ h2 {
 }
 
 .contato-form {
-  background: rgba(245, 247, 250, 0.94);
+  background: rgba(245, 247, 250, 0.438);
   border-radius: var(--radius);
   padding: 34px;
   border: 1px solid rgba(11, 29, 58, 0.08);
