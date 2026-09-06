@@ -47,12 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Formulário de contato --------------------------------------------------
-  // Sem backend próprio: monta um e-mail pré-preenchido com os dados do formulário.
-  // Para receber os leads automaticamente sem precisar de servidor, troque este
-  // bloco por uma integração como Formspree, Netlify Forms ou Web3Forms —
-  // basta apontar o "action" do <form> para o endpoint deles.
   const form = document.getElementById('contact-form');
   const formNote = document.getElementById('form-note');
+  const whatsappNumber = '5561992729270';
 
   if (form) {
     form.addEventListener('submit', (event) => {
@@ -69,13 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const assunto = encodeURIComponent(`Contato pelo site — ${interesse}`);
       const corpo = encodeURIComponent(
-        `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone || 'não informado'}\nInteresse: ${interesse}\n\nMensagem:\n${mensagem || '(sem mensagem)'}`
+        `Olá, RK Corretora! Recebi um novo contato pelo site.\n\nNome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone || 'não informado'}\nInteresse: ${interesse}\n\nMensagem:\n${mensagem || '(sem mensagem)'}`
       );
 
-      window.location.href = `mailto:contato@rkcorretora.com.br?subject=${assunto}&body=${corpo}`;
-      formNote.textContent = 'Abrindo seu app de e-mail para enviar a mensagem…';
+      window.open(`https://wa.me/${whatsappNumber}?text=${corpo}`, '_blank', 'noopener,noreferrer');
+      formNote.textContent = 'Abrindo o WhatsApp com seus dados preenchidos.';
       form.reset();
     });
   }
