@@ -83,7 +83,6 @@ button {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 24px;
-  font-size: large;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -999,6 +998,31 @@ h2 {
 }
 
 /* ---------------------------------- Responsive ---------------------------------- */
+@media (min-width: 561px) and (max-width: 980px) {
+  body {
+    font-size: 1.04rem;
+  }
+
+  .eyebrow,
+  .team-role,
+  .contact-label {
+    font-size: 0.82rem;
+  }
+
+  .hero-lead,
+  .section-lead,
+  .sobre-text p,
+  .value-list p,
+  .service-card p,
+  .diff-item p,
+  .marca-copy p:not(.marca-lead):not(.eyebrow),
+  .contact-list a,
+  .contact-list span,
+  .team-highlights li {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 980px) {
   #contato {
     background-image: linear-gradient(90deg, rgba(245, 247, 250, 0.529) 0%, rgba(245, 247, 250, 0.507) 42%, rgba(245, 247, 250, 0.45) 100%), url(src/contato.mobile.jpg);
