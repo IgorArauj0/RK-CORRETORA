@@ -1663,7 +1663,7 @@ h2 {
 
   .carousel-wrapper {
     aspect-ratio: 4 / 3;
-    min-height: 260px;
+    min-height: 280px;
     background-size: cover;
     background-position: center;
   }
@@ -1713,7 +1713,7 @@ h2 {
 
   .carousel-wrapper {
     aspect-ratio: 4 / 3;
-    min-height: 250px;
+    min-height: 270px;
     border-radius: 12px;
     background-size: cover;
     background-position: center;
