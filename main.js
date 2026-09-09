@@ -116,7 +116,7 @@ class Carousel {
 
   updateCarousel() {
     const offset = -this.currentIndex * 100;
-    this.track.style.transform = `translateX(${offset}%)`;
+    this.track.style.transform = `translate3d(${offset}%, 0, 0)`;
     
     this.dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === this.currentIndex);

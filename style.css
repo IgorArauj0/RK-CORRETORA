@@ -1278,12 +1278,15 @@ h2 {
 
 .carousel-track {
   display: flex;
+  width: 100%;
   height: 100%;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 0;
+  will-change: transform;
 }
 
 .carousel-slide {
+  width: 100%;
   min-width: 100%;
   flex-shrink: 0;
   height: 100%;
@@ -1306,6 +1309,8 @@ h2 {
 .carousel-image {
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -1804,7 +1809,10 @@ h2 {
   display: flex;
   gap: 3rem;
   animation: scroll-infinite 40s linear infinite;
-  width: fit-content;
+  -webkit-animation: scroll-infinite 40s linear infinite;
+  width: max-content;
+  min-width: 100%;
+  will-change: transform;
 }
 
 @keyframes scroll-infinite {
@@ -1812,7 +1820,18 @@ h2 {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes scroll-infinite {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -1823,6 +1842,7 @@ h2 {
 
 .insurer-carousel-item {
   flex-shrink: 0;
+  width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1846,6 +1866,8 @@ h2 {
 .insurer-logo {
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -1865,6 +1887,7 @@ h2 {
   }
 
   .insurer-carousel-item {
+    width: 160px;
     min-width: 160px;
     height: 90px;
   }
@@ -1890,6 +1913,7 @@ h2 {
   }
 
   .insurer-carousel-item {
+    width: 140px;
     min-width: 140px;
     height: 80px;
     padding: 0.75rem;
@@ -1926,6 +1950,7 @@ h2 {
   }
 
   .insurer-carousel-item {
+    width: 120px;
     min-width: 120px;
     height: 70px;
     padding: 0.5rem;
@@ -1953,6 +1978,7 @@ h2 {
   }
 
   .insurer-carousel-item {
+    width: 100px;
     min-width: 100px;
     height: 65px;
   }
