@@ -143,7 +143,7 @@ class Carousel {
   }
 
   startAutoPlay() {
-    this.autoPlayInterval = setInterval(() => this.next(), 6000);
+    this.autoPlayInterval = setInterval(() => this.next(), 10000);
   }
 
   stopAutoPlay() {
