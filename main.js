@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Formulário de contato --------------------------------------------------
   const form = document.getElementById('contact-form');
   const formNote = document.getElementById('form-note');
-  const whatsappNumber = '5561992729270';
+  const whatsappNumber = '5521999023436';
 
   if (form) {
     form.addEventListener('submit', (event) => {

@@ -979,17 +979,22 @@ h2 {
 .site-footer {
   background: var(--navy);
   color: var(--white);
-  padding: 50px 0 30px;
+  padding: 42px 0 28px;
 }
 
 .footer-inner {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.logo-footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-footer .logo-rk {
@@ -1003,32 +1008,45 @@ h2 {
 .footer-social {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
 
 .footer-social a {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 8px 12px;
-  border: 1px solid rgba(245, 247, 250, 0.18);
+  min-width: 150px;
+  padding: 14px 18px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
-  color: rgba(245, 247, 250, 0.78);
-  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  color: rgba(245, 247, 250, 0.82);
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+  letter-spacing: 0.02em;
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
 }
 
 .footer-social a:hover,
 .footer-social a:focus-visible {
   color: var(--white);
-  border-color: var(--sky);
-  background: rgba(111, 160, 224, 0.14);
+  border-color: rgba(123, 202, 255, 0.8);
+  background: rgba(127, 174, 227, 0.08);
+  box-shadow: 0 0 0 1px rgba(123, 202, 255, 0.35), 0 10px 22px rgba(46, 95, 152, 0.18);
   transform: translateY(-2px);
 }
 
 .footer-social i {
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.footer-social span {
+  display: block;
+  text-align: center;
 }
 
 .footer-nav {
@@ -1051,10 +1069,60 @@ h2 {
 .footer-meta {
   padding-top: 22px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px 0;
   font-size: 0.8rem;
+  line-height: 1.5;
   color: rgba(245, 247, 250, 0.55);
+  text-align: right;
+}
+
+.footer-meta p {
+  margin: 0;
+  padding: 5px 9px;
+  max-width: 100%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: color .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+
+.footer-meta p:hover,
+.footer-meta p:focus-within {
+  color: var(--white);
+  background: rgba(127, 174, 227, 0.08);
+  border-color: rgba(123, 202, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.footer-meta strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.footer-meta a {
+  color: rgba(255, 255, 255, 0.92);
+  transition: color .2s var(--ease);
+}
+
+.footer-meta a:hover,
+.footer-meta a:focus-visible {
+  color: #b9e3ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-addresses span {
+  display: block;
 }
 
 /* ---------------------------------- Responsive ---------------------------------- */
@@ -1335,15 +1403,31 @@ h2 {
   }
 
   .footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
   }
 
   .footer-social {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .footer-social a {
+    min-width: 130px;
+    padding-inline: 16px;
+  }
+
+  .footer-meta {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-meta p {
+    max-width: 100%;
   }
 }
 
@@ -2026,6 +2110,12 @@ h2 {
   max-height: none;
   object-fit: contain;
   display: block;
+}
+
+.insurer-carousel-item:nth-child(12n + 5) .insurer-logo,
+.insurer-carousel-item:nth-child(12n + 6) .insurer-logo,
+.insurer-carousel-item:nth-child(12n + 7) .insurer-logo {
+  transform: scale(1.35);
 }
 
 /* ======================= RESPONSIVO ======================= */
