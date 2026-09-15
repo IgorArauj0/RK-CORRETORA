@@ -1879,8 +1879,10 @@ h2 {
   }
 
   .carousel-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     min-height: 0;
+    width: min(220px, calc(100vw - 120px));
+    justify-self: center;
     background-color: var(--navy);
     background-size: contain;
     background-position: center;
@@ -1895,8 +1897,12 @@ h2 {
 
   .carousel-image {
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
+  }
+
+  .carousel-slide:hover .carousel-image {
+    transform: none;
   }
 
   .carousel-btn {
@@ -1943,16 +1949,18 @@ h2 {
   }
 
   .carousel-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     min-height: 0;
+    width: min(220px, calc(100vw - 120px));
+    justify-self: center;
     border-radius: 12px;
-    background-color: var(--navy);
+    background-color: #f5f7fa;
     background-size: contain;
     background-position: center;
   }
 
   .carousel-image {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 
@@ -2109,13 +2117,16 @@ h2 {
   max-width: none;
   max-height: none;
   object-fit: contain;
+  object-position: center;
   display: block;
+  transform: scale(1.35);
+  transform-origin: center;
 }
 
-.insurer-carousel-item:nth-child(12n + 5) .insurer-logo,
-.insurer-carousel-item:nth-child(12n + 6) .insurer-logo,
-.insurer-carousel-item:nth-child(12n + 7) .insurer-logo {
-  transform: scale(1.35);
+.insurer-logo[src*="amil.png"],
+.insurer-logo[src*="Sulamerica.jpeg"],
+.insurer-logo[src*="MedSenior.jpeg"] {
+  transform: scale(1.58);
 }
 
 /* ======================= RESPONSIVO ======================= */
