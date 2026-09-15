@@ -724,26 +724,18 @@ h2 {
   align-items: center;
 }
 
-.marca-icon svg {
+.marca-icon {
   width: 150px;
   height: 150px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
 }
 
-.marca-icon circle:first-child {
-  fill: none;
-  stroke: var(--blue);
-  stroke-width: 2.5;
-}
-
-.owl-eye {
-  fill: none;
-  stroke: var(--blue);
-  stroke-width: 2.5;
-}
-
-.owl-pupil {
-  fill: var(--blue);
-  stroke: var(--blue);
+.marca-icon i {
+  font-size: 4.4rem;
 }
 
 .marca-lead {
