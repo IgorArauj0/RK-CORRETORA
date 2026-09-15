@@ -2095,6 +2095,8 @@ h2 {
   min-width: 180px;
   height: 100px;
   padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
   background: #f8f9fa;
   border-radius: 12px;
   border: 1px solid #e9ecef;
@@ -2119,14 +2121,14 @@ h2 {
   object-fit: contain;
   object-position: center;
   display: block;
-  transform: scale(1.35);
+  transform: scale(1);
   transform-origin: center;
 }
 
 .insurer-logo[src*="amil.png"],
 .insurer-logo[src*="Sulamerica.jpeg"],
 .insurer-logo[src*="MedSenior.jpeg"] {
-  transform: scale(1.58);
+  transform: scale(1.35);
 }
 
 /* ======================= RESPONSIVO ======================= */
